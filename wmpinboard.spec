@@ -10,7 +10,7 @@ Source0: 	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.ta
 URL: 		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 BuildPrereq:	xpm-devel
 BuildPrereq:	XFree86-devel
-BuildRoot: 	/tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define _prefix /usr/X11R6
 
