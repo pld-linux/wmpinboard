@@ -54,14 +54,13 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/DockApplets
 install wmpb-convert.pl	$RPM_BUILD_ROOT%{_bindir}
 #install %{SOURCE1}	$RPM_BUILD_ROOT%{_applnkdir}/DockApplets
 
-gzip -9nf CREDITS ChangeLog NEWS README TODO AUTHORS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc CREDITS ChangeLog NEWS README TODO AUTHORS
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/wmpinboard.1*
