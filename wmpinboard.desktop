@@ -3,6 +3,6 @@ Name=WmPinboard
 Comment=Miniature pinboard
 Comment[pl]=Miniaturowa tablica na notatki
 Exec=wmpinboard
-Terminal=0
+Terminal=false
 Type=Application
 # vi: encoding=utf-8
