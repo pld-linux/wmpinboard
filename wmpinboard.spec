@@ -2,7 +2,7 @@ Summary:	Window Maker dock applet resembling a miniature pinboard
 Summary(pl):	dokowalna miniaturowa tablica na notatki dla WindowMakera 
 Name:		wmpinboard 
 Version:	1.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Window Managers/Tools
 Group(de):	X11/Fenstermanager/Werkzeuge
@@ -39,6 +39,8 @@ do 8x5 (-1) znaków.
 %setup -q
 
 %build
+aclocal
+autoconf
 %configure
 
 %{__make}
