@@ -9,7 +9,6 @@ Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source0:	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.bz2
 Source1:	wmpinboard.desktop
 URL:		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
-BuildRequires:	xpm-devel
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
