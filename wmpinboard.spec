@@ -58,6 +58,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/wmpb-convert.pl
 
 %changelog
+* Thu May 20 1999 Piotr Czerwiñski <pius@pld.org.pl> 
+  [0.8.4-1]
+- updated to 0.8.4.
+
 * Mon May 17 1999 Piotr Czerwiñski <pius@pld.org.pl>
   [0.8.3-3]
 - added using more rpm macros,
