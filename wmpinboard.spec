@@ -12,7 +12,7 @@ BuildPrereq:	xpm-devel
 BuildPrereq:	XFree86-devel
 BuildRoot: 	/tmp/%{name}-%{version}-root
 
-%define _prefix         /usr/X11R6
+%define _prefix /usr/X11R6
 
 %description
 wmpinboard is a tiny, simple applet designed to be docked to Window
@@ -54,42 +54,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc {CREDITS,ChangeLog,README,TODO,ReleaseNotes}.gz
 
-%attr(755,root,root) %{_bindir}/%{name}
-%attr(755,root,root) %{_bindir}/wmpb-convert.pl
+%attr(755,root,root) %{_bindir}/*
 
 %changelog
 * Thu May 20 1999 Piotr Czerwiñski <pius@pld.org.pl> 
   [0.8.4-1]
-- updated to 0.8.4.
-
-* Mon May 17 1999 Piotr Czerwiñski <pius@pld.org.pl>
-  [0.8.3-3]
-- added using more rpm macros,
-- package is FHS 2.0 compliant.
-
-* Mon Apr 26 1999 Artur Frysiak <wiget@pld.org.pl>
-  [0.8.3-2]
-- changed Group to X11/Window Managers/Tools.
-
-* Tue Apr 20 1999 Piotr Czerwiñski <pius@pld.org.pl>
-  [0.8.3-1]
-- updated to 0.8.3,
-- added BuildPrereq: xpm-devel, XFree86-devel,
-- recompiled on rpm 3.
-
-* Thu Mar 25 1999 Piotr Czerwiñski <pius@pld.org.pl>
-  [0.8.2-1]
-- upgraded to 0.8.2.
-
-* Tue Mar 23 1999 Piotr Czerwiñski <pius@pld.org.pl>
-  [0.8.1-1]
-- upgraded to 0.8.1,
-- added pl translation,
-- added using $RPM_OPT_FLAGS during compile,
-- simplifications in %install,
-- added gzipping documentation,
-- added ReleaseNotes to %doc and removed: INSTALL LICENCE FAQ NOTES,
-- changes in %files.
-
-* Mon Jan 04 1999 Jochem Wichers Hoeth <wiho@chem.uva.nl>
-- first build
+- based on spec maked by Jochem Wichers Hoeth <wiho@chem.uva.nl>,
+- spec rewritten by me and Artur Frysiak <wiget@pld.org.pl>.
