@@ -4,8 +4,8 @@ Name:		wmpinboard
 Version: 	0.8.3
 Release: 	1
 Copyright: 	GPL
-Group: 		X11/Utilities
-Group(pl):	X11/Narzêdzia
+Group: 		X11/Window Managers/Tools
+Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source0: 	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.gz
 URL: 		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 BuildPrereq:	xpm-devel
