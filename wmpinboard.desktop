@@ -6,4 +6,6 @@ Comment[pl]=Miniaturowa tablica na notatki
 Exec=wmpinboard
 Terminal=false
 Type=Application
+Categories=Applet;
+NotShowIn=GNOME;KDE;
 # vi: encoding=utf-8
