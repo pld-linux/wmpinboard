@@ -5,9 +5,10 @@ Version:	1.0
 Release:	2
 License:	GPL
 Group:		X11/Window Managers/Tools
+Group(de):	X11/Fenstermanager/Werkzeuge
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source0:	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.bz2
-Source1:	wmpinboard.desktop
+Source1:	%{name}.desktop
 URL:		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -38,7 +39,6 @@ do 8x5 (-1) znaków.
 %setup -q
 
 %build
-LDFLAGS="-s"
 %configure
 
 %{__make}
@@ -52,8 +52,7 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/DockApplets
 install wmpb-convert.pl	$RPM_BUILD_ROOT%{_bindir}
 install %{SOURCE1}	$RPM_BUILD_ROOT%{_applnkdir}/DockApplets
 
-gzip -9nf CREDITS ChangeLog NEWS README TODO AUTHORS \
-	$RPM_BUILD_ROOT%{_mandir}/man1/wmpinboard.1
+gzip -9nf CREDITS ChangeLog NEWS README TODO AUTHORS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,5 +62,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc {CREDITS,ChangeLog,README,TODO,NEWS,AUTHORS}.gz
 
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/wmpinboard.1.gz
+%{_mandir}/man1/wmpinboard.1*
 %{_applnkdir}/DockApplets/wmpinboard.desktop
