@@ -2,7 +2,7 @@ Summary: 	Window Maker dock applet resembling a miniature pinboard
 Summary(pl):	dokowalna miniaturowa tablica na notatki dla WindowMakera 
 Name:		wmpinboard 
 Version: 	0.8.3
-Release: 	2
+Release: 	3
 Copyright: 	GPL
 Group: 		X11/Window Managers/Tools
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
@@ -11,6 +11,8 @@ URL: 		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 BuildPrereq:	xpm-devel
 BuildPrereq:	XFree86-devel
 BuildRoot: 	/tmp/%{name}-%{version}-root
+
+%define _prefix         /usr/X11R6
 
 %description
 wmpinboard is a tiny, simple applet designed to be docked to Window
@@ -30,7 +32,7 @@ widoczne. Dlatego te¿ ka¿da karteczka mo¿e byæ na ¿±danie rozwiniêta do
 "pe³nych wymiarów", pozwalaj±c w ten sposób wy¶wietliæ do 8x5 (-1) znaków.
 
 %prep
-%setup -q -n wmpinboard.app
+%setup -q -n %{name}.app
 
 %build
 xmkmf
@@ -40,8 +42,8 @@ make CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install DESTDIR="$RPM_BUILD_ROOT/usr/X11R6"
-install wmpb-convert.pl $RPM_BUILD_ROOT/usr/X11R6/bin
+make install DESTDIR=$RPM_BUILD_ROOT%{_prefix}
+install wmpb-convert.pl $RPM_BUILD_ROOT%{_bindir}
 
 gzip -9nf CREDITS ChangeLog README TODO ReleaseNotes
 
@@ -52,10 +54,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc {CREDITS,ChangeLog,README,TODO,ReleaseNotes}.gz
 
-%attr(755,root,root) /usr/X11R6/bin/wmpinboard
-%attr(755,root,root) /usr/X11R6/bin/wmpb-convert.pl
+%attr(755,root,root) %{_bindir}/%{name}
+%attr(755,root,root) %{_bindir}/wmpb-convert.pl
 
 %changelog
+* Mon May 17 1999 Piotr Czerwiñski <pius@pld.org.pl>
+  [0.8.3-3]
+- added using more rpm macros,
+- package is FHS 2.0 compliant.
+
 * Mon Apr 26 1999 Artur Frysiak <wiget@pld.org.pl>
   [0.8.3-2]
 - changed Group to X11/Window Managers/Tools.
