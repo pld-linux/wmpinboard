@@ -6,9 +6,9 @@ Release: 	1
 Copyright: 	GPL
 Group: 		X11/Utilities
 Group(pl):	X11/Narzêdzia
-Source0: 	%{name}-%{version}.tar.gz
-BuildRoot: 	/tmp/%{name}-%{version}-root
+Source0: 	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.gz
 URL: 		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
+BuildRoot: 	/tmp/%{name}-%{version}-root
 
 %description
 wmpinboard is a tiny, simple applet designed to be docked to Window
