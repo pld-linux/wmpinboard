@@ -1,12 +1,12 @@
 Summary: 	Window Maker dock applet resembling a miniature pinboard
+Summary(pl):	dokowalna miniaturowa tablica na notatki dla WindowMakera 
 Name:		wmpinboard 
-Version: 	0.5.5
-Release: 	1d
+Version: 	0.8.1
+Release: 	1
 Copyright: 	GPL
 Group: 		X11/Utilities
 Group(pl):	X11/Narzêdzia
-###### 		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
-Source: 	%{name}-%{version}.tar.gz
+Source0: 	%{name}-%{version}.tar.gz
 BuildRoot: 	/tmp/%{name}-%{version}-root
 URL: 		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 
@@ -18,27 +18,51 @@ pinboard is limited to a size of less than 64x64 pixels, the notes of
 course can't be read in this view.  That's why each note can on demand
 be viewed "full size", allowing for 8x5 (-1) characters to be displayed.
 
+%description -l pl
+wmpinboard jest niewielkim, prostym apletem zaprojektowanym w sposób
+umo¿liwiaj±cy umieszczenie go w Doku lub Spinaczu WindowMakera. 
+Przedstawia zminiaturyzowan± tablicê, do której mog± byæ "przypinane"
+kolorowe karteczki z notatkami. Poniewa¿ rozmiar tablicy jest ograniczony
+do wymiarów 64x64 pixeli, notatki nie mog± byæ oczywi¶cie w tym stanie 
+widoczne. Dlatego te¿ ka¿da karteczka mo¿e byæ na ¿±danie rozwiniêta do 
+"pe³nych wymiarów", pozwalaj±c w ten sposób wy¶wietliæ do 8x5 (-1) znaków.
+
 %prep
 %setup -q -n wmpinboard.app
 
 %build
 xmkmf
-make
+make CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
+	CDEBUGFLAGS="$RPM_OPT_FLAGS"
 
 %install
-if [ -d $RPM_BUILD_ROOT ]; then rm -r $RPM_BUILD_ROOT ; fi
-mkdir -p $RPM_BUILD_ROOT/usr/X11R6/bin
-install -s wmpinboard $RPM_BUILD_ROOT/usr/X11R6/bin
+rm -rf $RPM_BUILD_ROOT
+
+make install DESTDIR="$RPM_BUILD_ROOT/usr/X11R6"
+install wmpb-convert.pl $RPM_BUILD_ROOT/usr/X11R6/bin
+
+gzip -9nf CREDITS ChangeLog README TODO ReleaseNotes
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING CREDITS ChangeLog FAQ NOTES README TODO
+%doc CREDITS.gz ChangeLog.gz README.gz TODO.gz ReleaseNotes.gz
 
-%attr(711,root,root) /usr/X11R6/bin/wmpinboard
+%attr(755,root,root) /usr/X11R6/bin/wmpinboard
+%attr(755,root,root) /usr/X11R6/bin/wmpb-convert.pl
 
 %changelog
+* Tue Mar 23 1999 Piotr Czerwiñski <pius@pld.org.pl>
+  [0.8.1-1]
+- upgraded to 0.8.1,
+- added pl translation,
+- added using $RPM_OPT_FLAGS during compile,
+- simplifications in %install,
+- added gzipping documentation,
+- added ReleaseNotes to %doc and removed: INSTALL LICENCE FAQ NOTES,
+- changes in %files.
+
 * Mon Jan 04 1999 Jochem Wichers Hoeth <wiho@chem.uva.nl>
 - first build
