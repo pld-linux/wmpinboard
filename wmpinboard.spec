@@ -2,7 +2,7 @@ Summary:	Window Maker dock applet resembling a miniature pinboard
 Summary(pl):	Dokowalna miniaturowa tablica na notatki dla WindowMakera
 Name:		wmpinboard
 Version:	1.0
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Window Managers/Tools
 Source0:	http://www.stud.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.bz2
@@ -46,13 +46,12 @@ do 8x5 (-1) znaków.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/DockApplets
+install -d $RPM_BUILD_ROOT%{_desktopdir}/docklets
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 install wmpb-convert.pl	$RPM_BUILD_ROOT%{_bindir}
-#install %{SOURCE1}	$RPM_BUILD_ROOT%{_applnkdir}/DockApplets
-
+install %{SOURCE1}	$RPM_BUILD_ROOT%{_desktopdir}/docklets
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,4 +62,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/wmpinboard.1*
-#%%{_applnkdir}/DockApplets/wmpinboard.desktop
+%{_desktopdir}/docklets/wmpinboard.desktop
