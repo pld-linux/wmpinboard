@@ -29,7 +29,7 @@ wmpinboard jest niewielkim, prostym apletem zaprojektowanym w sposób
 umo¿liwiaj±cy umieszczenie go w Doku lub Spinaczu WindowMakera.
 Przedstawia zminiaturyzowan± tablicê, do której mog± byæ "przypinane"
 kolorowe karteczki z notatkami. Poniewa¿ rozmiar tablicy jest
-ograniczony do wymiarów 64x64 pixeli, notatki nie mog± byæ oczywi¶cie
+ograniczony do wymiarów 64x64 pikseli, notatki nie mog± byæ oczywi¶cie
 w tym stanie widoczne. Dlatego te¿ ka¿da karteczka mo¿e byæ na ¿±danie
 rozwiniêta do "pe³nych wymiarów", pozwalaj±c w ten sposób wy¶wietliæ
 do 8x5 (-1) znaków.
