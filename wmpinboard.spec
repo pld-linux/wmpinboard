@@ -11,10 +11,9 @@ Source1:	wmpinboard.desktop
 URL: 		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 BuildRequires:	xpm-devel
 BuildRequires:	XFree86-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_prefix		/usr/X11R6
-%define		_applnkdir	%{_datadir}/applnk
 
 %description
 wmpinboard is a tiny, simple applet designed to be docked to Window
