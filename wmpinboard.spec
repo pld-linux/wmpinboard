@@ -64,4 +64,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/wmpinboard.1*
-#%{_applnkdir}/DockApplets/wmpinboard.desktop
+#%%{_applnkdir}/DockApplets/wmpinboard.desktop
