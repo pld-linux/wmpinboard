@@ -9,8 +9,8 @@ Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source0: 	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.gz
 Source1:	wmpinboard.desktop
 URL: 		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
-BuildPrereq:	xpm-devel
-BuildPrereq:	XFree86-devel
+BuildRequires:	xpm-devel
+BuildRequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define _prefix /usr/X11R6
