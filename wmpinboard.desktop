@@ -5,3 +5,4 @@ Comment[pl]=Miniaturowa tablica na notatki
 Exec=wmpinboard
 Terminal=0
 Type=Application
+# vi: encoding=utf-8
