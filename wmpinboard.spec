@@ -48,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CREDITS.gz ChangeLog.gz README.gz TODO.gz ReleaseNotes.gz
+%doc {CREDITS,ChangeLog,README,TODO,ReleaseNotes}.gz
 
 %attr(755,root,root) /usr/X11R6/bin/wmpinboard
 %attr(755,root,root) /usr/X11R6/bin/wmpb-convert.pl
