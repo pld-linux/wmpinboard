@@ -5,10 +5,10 @@ Version:	1.0
 Release:	4
 License:	GPL
 Group:		X11/Window Managers/Tools
-Source0:	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.bz2
-# Source0-md5:	81e8946ce90b37d084a9b2eb69837814
+Source0:	http://www.stud.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.bz2
+# Source0-md5:	5a270397f7765b3416abae43d020a0c9
 Source1:	%{name}.desktop
-URL:		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
+URL:		http://www.stud.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	XFree86-devel
