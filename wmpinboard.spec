@@ -14,8 +14,6 @@ BuildRequires:	automake
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define 	_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 wmpinboard is a tiny, simple applet designed to be docked to Window
