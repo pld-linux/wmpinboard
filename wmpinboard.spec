@@ -7,6 +7,7 @@ Copyright: 	GPL
 Group: 		X11/Window Managers/Tools
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source0: 	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.gz
+Source1:	wmpinboard.desktop
 URL: 		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 BuildPrereq:	xpm-devel
 BuildPrereq:	XFree86-devel
@@ -41,9 +42,11 @@ make CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/etc/X11/applnk/DockApplets
 
 make install DESTDIR=$RPM_BUILD_ROOT%{_prefix}
 install wmpb-convert.pl $RPM_BUILD_ROOT%{_bindir}
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/applnk/DockApplets
 
 gzip -9nf CREDITS ChangeLog README TODO 
 
@@ -53,8 +56,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {CREDITS,ChangeLog,README,TODO}.gz
-
 %attr(755,root,root) %{_bindir}/*
+
+/etc/X11/applnk/DockApplets/wmpinboard.desktop
 
 %changelog
 * Mon Jun 21 1999 Piotr Czerwiñski <pius@pld.org.pl> 
