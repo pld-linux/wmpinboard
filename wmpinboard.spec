@@ -1,7 +1,7 @@
 Summary: 	Window Maker dock applet resembling a miniature pinboard
 Summary(pl):	dokowalna miniaturowa tablica na notatki dla WindowMakera 
 Name:		wmpinboard 
-Version: 	0.8.4
+Version: 	0.8.5
 Release: 	1
 Copyright: 	GPL
 Group: 		X11/Window Managers/Tools
@@ -45,18 +45,22 @@ rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT%{_prefix}
 install wmpb-convert.pl $RPM_BUILD_ROOT%{_bindir}
 
-gzip -9nf CREDITS ChangeLog README TODO ReleaseNotes
+gzip -9nf CREDITS ChangeLog README TODO 
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {CREDITS,ChangeLog,README,TODO,ReleaseNotes}.gz
+%doc {CREDITS,ChangeLog,README,TODO}.gz
 
 %attr(755,root,root) %{_bindir}/*
 
 %changelog
+* Mon Jun 21 1999 Piotr Czerwiñski <pius@pld.org.pl> 
+  [0.8.5-1]
+- updated to 0.8.5.
+
 * Thu May 20 1999 Piotr Czerwiñski <pius@pld.org.pl> 
   [0.8.4-1]
 - based on spec made by Jochem Wichers Hoeth <wiho@chem.uva.nl>,
