@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=wmpinboard
+Comment=Miniature pinboard
+Comment[pl]=Miniaturowa tablica na notatki
+Exec=wmpinboard
+Terminal=0
+Type=Application
