@@ -39,7 +39,7 @@ do 8x5 (-1) znaków.
 %setup -q
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure
 
