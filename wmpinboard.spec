@@ -40,7 +40,7 @@ do 8x5 (-1) znaków.
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 %configure
 
 %{__make}
