@@ -1,19 +1,21 @@
 Summary: 	Window Maker dock applet resembling a miniature pinboard
 Summary(pl):	dokowalna miniaturowa tablica na notatki dla WindowMakera 
 Name:		wmpinboard 
-Version: 	0.8.5
+Version: 	0.9.1
 Release: 	1
 Copyright: 	GPL
 Group: 		X11/Window Managers/Tools
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
-Source0: 	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.gz
+Source0: 	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.bz2
 Source1:	wmpinboard.desktop
 URL: 		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 BuildRequires:	xpm-devel
 BuildRequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
-%define _prefix /usr/X11R6
+%define 	_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
+%define		_sysconfdir	/etc/X11
 
 %description
 wmpinboard is a tiny, simple applet designed to be docked to Window
@@ -42,13 +44,17 @@ make CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/etc/X11/applnk/DockApplets
+install -d $RPM_BUILD_ROOT/etc/X11/applnk/DockApplets \
+	$RPM_BUILD_ROOT%{_mandir}/man1
 
-make install DESTDIR=$RPM_BUILD_ROOT%{_prefix}
-install wmpb-convert.pl $RPM_BUILD_ROOT%{_bindir}
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/applnk/DockApplets
+make install \
+	DESTDIR=$RPM_BUILD_ROOT%{_prefix}
 
-gzip -9nf CREDITS ChangeLog README TODO 
+install wmpb-convert.pl	$RPM_BUILD_ROOT%{_bindir}
+install %{SOURCE1}	$RPM_BUILD_ROOT/etc/X11/applnk/DockApplets
+
+gzip -9nf CREDITS ChangeLog README TODO \
+	$RPM_BUILD_ROOT%{_mandir}/man1/wmpinboard.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -56,6 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {CREDITS,ChangeLog,README,TODO}.gz
-%attr(755,root,root) %{_bindir}/*
 
-/etc/X11/applnk/DockApplets/wmpinboard.desktop
+%attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/wmpinboard.1.gz
+%{_sysconfdir}/applnk/DockApplets/wmpinboard.desktop
