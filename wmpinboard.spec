@@ -59,13 +59,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 
 /etc/X11/applnk/DockApplets/wmpinboard.desktop
-
-%changelog
-* Mon Jun 21 1999 Piotr Czerwiñski <pius@pld.org.pl> 
-  [0.8.5-1]
-- updated to 0.8.5.
-
-* Thu May 20 1999 Piotr Czerwiñski <pius@pld.org.pl> 
-  [0.8.4-1]
-- based on spec made by Jochem Wichers Hoeth <wiho@chem.uva.nl>,
-- spec rewritten by me and Artur Frysiak <wiget@pld.org.pl>.
