@@ -5,8 +5,6 @@ Version:	1.0
 Release:	4
 License:	GPL
 Group:		X11/Window Managers/Tools
-Group(de):	X11/Fenstermanager/Werkzeuge
-Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source0:	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 URL:		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
