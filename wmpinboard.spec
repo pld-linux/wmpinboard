@@ -1,5 +1,5 @@
 Summary:	Window Maker dock applet resembling a miniature pinboard
-Summary(pl):	Dokowalna miniaturowa tablica na notatki dla WindowMakera
+Summary(pl.UTF-8):   Dokowalna miniaturowa tablica na notatki dla WindowMakera
 Name:		wmpinboard
 Version:	1.0
 Release:	5
@@ -24,15 +24,15 @@ course can't be read in this view. That's why each note can on demand
 be viewed "full size", allowing for 8x5 (-1) characters to be
 displayed.
 
-%description -l pl
-wmpinboard jest niewielkim, prostym apletem zaprojektowanym w sposób
-umo¿liwiaj±cy umieszczenie go w Doku lub Spinaczu WindowMakera.
-Przedstawia zminiaturyzowan± tablicê, do której mog± byæ "przypinane"
-kolorowe karteczki z notatkami. Poniewa¿ rozmiar tablicy jest
-ograniczony do wymiarów 64x64 pikseli, notatki nie mog± byæ oczywi¶cie
-w tym stanie widoczne. Dlatego te¿ ka¿da karteczka mo¿e byæ na ¿±danie
-rozwiniêta do "pe³nych wymiarów", pozwalaj±c w ten sposób wy¶wietliæ
-do 8x5 (-1) znaków.
+%description -l pl.UTF-8
+wmpinboard jest niewielkim, prostym apletem zaprojektowanym w sposÃ³b
+umoÅ¼liwiajÄ…cy umieszczenie go w Doku lub Spinaczu WindowMakera.
+Przedstawia zminiaturyzowanÄ… tablicÄ™, do ktÃ³rej mogÄ… byÄ‡ "przypinane"
+kolorowe karteczki z notatkami. PoniewaÅ¼ rozmiar tablicy jest
+ograniczony do wymiarÃ³w 64x64 pikseli, notatki nie mogÄ… byÄ‡ oczywiÅ›cie
+w tym stanie widoczne. Dlatego teÅ¼ kaÅ¼da karteczka moÅ¼e byÄ‡ na Å¼Ä…danie
+rozwiniÄ™ta do "peÅ‚nych wymiarÃ³w", pozwalajÄ…c w ten sposÃ³b wyÅ›wietliÄ‡
+do 8x5 (-1) znakÃ³w.
 
 %prep
 %setup -q
